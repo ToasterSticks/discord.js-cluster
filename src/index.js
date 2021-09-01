@@ -2,7 +2,7 @@
 
 module.exports = {
   ClusterManager: require('./sharding/ClusterManager.js'),
+  ClusterClient: require('./Client'),
   Cluster: require('./sharding/Cluster.js'),
-  Client: require('./Client'),
   Logger: require('./util/Logger'),
 };

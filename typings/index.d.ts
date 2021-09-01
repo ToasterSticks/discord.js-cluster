@@ -4,7 +4,7 @@ import { EventEmitter } from 'events';
 import { Client, ClientOptions, ShardingManagerMode, Serialized, Awaited, Snowflake, ShardClientUtil } from 'discord.js';
 import { Worker } from 'cluster';
 
-export class ClusterClient extends Client {
+export class ClusterClient<T> extends Client<T> {
   public constructor(options: ClientOptions);
   public cluster: ClusterClientUtil | null;
   public shard: ShardClientUtil | null;

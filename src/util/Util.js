@@ -5,7 +5,6 @@ const {
   Options,
   Constants: { Endpoints },
 } = require('discord.js');
-const fetch = require('node-fetch');
 const { Error: DiscordError } = require('../errors');
 
 class Util extends BaseUtil {
@@ -23,7 +22,7 @@ class Util extends BaseUtil {
   static async fetchSessionStartLimit(token) {
     if (!token) throw new DiscordError('TOKEN_MISSING');
     const defaults = Options.createDefault();
-    const response = await fetch(`${defaults.http.api}/v${defaults.http.version}${Endpoints.botGateway}`, {
+    const response = await (await import('node-fetch')).default(`${defaults.http.api}/v${defaults.http.version}${Endpoints.botGateway}`, {
       method: 'GET',
       headers: { Authorization: `Bot ${token.replace(/^Bot\s*/i, '')}` },
     });

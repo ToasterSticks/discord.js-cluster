@@ -66,8 +66,8 @@ export class ClusterClientUtil {
     fn: (client: Client, context: Serialized<P>) => Awaited<T>,
     options: { context: P; shard: number },
   ): Promise<Serialized<T>>;
-  public fetchClientValues(prop: string): Promise<unknown[]>;
-  public fetchClientValues(prop: string, cluster: number): Promise<unknown>;
+  public fetchClientValues<T = unknown>(prop: string): Promise<T[]>;
+  public fetchClientValues<T = unknown>(prop: string, cluster: number): Promise<T>;
   public respawnAll(options?: MultipleClusterRespawnOptions): Promise<void>;
   public send(message: unknown): Promise<void>;
 

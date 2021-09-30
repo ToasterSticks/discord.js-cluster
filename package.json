@@ -24,7 +24,8 @@
     "lint:fix": "eslint src --fix",
     "lint:typings": "tslint typings/index.d.ts",
     "prettier": "prettier --write src/**/*.js typings/**/*.ts",
-    "prepublishOnly": "npm run test && gen-esm-wrapper ./src/index.js ./src/index.mjs"
+    "prepublishOnly": "npm run test && gen-esm-wrapper ./src/index.js ./src/index.mjs",
+    "postinstall": "gen-esm-wrapper ./src/index.js ./src/index.mjs"
   },
   "dependencies": {
     "asciiart-logo": "^0.2.6",

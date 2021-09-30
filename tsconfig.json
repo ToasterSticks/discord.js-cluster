@@ -7,7 +7,7 @@
     "alwaysStrict": true,
     "pretty": false,
     "module": "commonjs",
-    "target": "esnext",
+    "target": "es2019",
     "lib": ["esnext", "esnext.array", "esnext.asynciterable", "esnext.intl", "esnext.symbol"],
     "sourceMap": false,
     "skipDefaultLibCheck": true

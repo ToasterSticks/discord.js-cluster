@@ -25,10 +25,8 @@
     "lint:typings": "tslint typings/index.d.ts",
     "prettier": "prettier --write src/**/*.js typings/**/*.ts",
     "prepublishOnly": "npm run test && gen-esm-wrapper ./src/index.js ./src/index.mjs",
-    "postinstall": "npx gen-esm-wrapper ./src/index.js ./src/index.mjs"
   },
   "dependencies": {
-    "@discordjs/collection": "^0.2.1",
     "asciiart-logo": "^0.2.6",
     "colors": "^1.1.2",
     "fancy-log": "^1.3.0"

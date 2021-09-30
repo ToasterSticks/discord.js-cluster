@@ -28,11 +28,11 @@
     "postinstall": "npx gen-esm-wrapper ./src/index.js ./src/index.mjs"
   },
   "dependencies": {
-    "discord.js": "github:ToasterSticks/discord.js",
     "asciiart-logo": "^0.2.6",
     "colors": "^1.1.2",
     "fancy-log": "^1.3.0",
     "gen-esm-wrapper": "^1.1.2",
+    "discord.js": "*",
     "undici": "*"
   },
   "devDependencies": {

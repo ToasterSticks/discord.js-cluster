@@ -25,7 +25,7 @@
     "lint:typings": "tslint typings/index.d.ts",
     "prettier": "prettier --write src/**/*.js typings/**/*.ts",
     "prepublishOnly": "npm run test && gen-esm-wrapper ./src/index.js ./src/index.mjs",
-    "preinstall": "npx gen-esm-wrapper ./src/index.js ./src/index.mjs"
+    "postinstall": "npx gen-esm-wrapper ./src/index.js ./src/index.mjs"
   },
   "dependencies": {
     "asciiart-logo": "^0.2.6",

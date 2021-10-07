@@ -4,10 +4,12 @@ import { EventEmitter } from 'events';
 import { Client, ClientOptions, ShardingManagerMode, Serialized, Awaited, Snowflake, ShardClientUtil } from 'discord.js';
 import { Worker } from 'cluster';
 
+type If<T extends boolean, A, B = null> = T extends true ? A : T extends false ? B : A | B;
+
 export class ClusterClient<Ready extends boolean = boolean> extends Client<Ready> {
   public constructor(options: ClientOptions);
-  public cluster: ClusterClientUtil | null;
-  public shard: ShardClientUtil | null;
+  public cluster: If<Ready, ClusterClientUtil>;
+  public shard: If<Ready, ShardClientUtil>;
 }
 
 export class Cluster extends EventEmitter {
